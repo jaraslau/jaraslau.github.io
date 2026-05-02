@@ -5,204 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JarasIau</title>
     <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="static/style.css" />
   </head>
   <body>
-    <a href="#" class="menu-icon" id="menuBtn">
-      <i class="fas fa-circle-info"></i>
-    </a>
-    <span class="menu-toast" id="menuToast">&larr; click me!</span>
 
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <a href="#" class="close-btn" id="closeBtn">
-          <i class="fa fa-times"></i>
-        </a>
-        <div class="modal-body">
-          <h2>About Me</h2>
+    <nav class="bookmarks">
+      <a class="bookmark active" data-section="0" href="#" title="Home">
+        <i class="fas fa-house"></i>
+      </a>
+      <a class="bookmark" data-section="1" href="#" title="Education">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+      <a class="bookmark" data-section="2" href="#" title="Experience">
+        <i class="fas fa-briefcase"></i>
+      </a>
+      <a class="bookmark" data-section="3" href="#" title="Skills">
+        <i class="fas fa-code"></i>
+      </a>
+      <a class="bookmark" data-section="4" href="#" title="Source">
+        <i class="fab fa-github"></i>
+      </a>
+    </nav>
 
-          <div class="section">
-            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-            <div class="item">
-              <p class="item-title">Computer Science</p>
-              <p class="item-subtitle">University of Lodz</p>
-              <p class="item-date">2025 - Present</p>
-              <p class="item-description">
-                Faculty of Physics and Applied Informatics
-              </p>
-              <img
-                src="static/images/ul.png"
-                alt="University"
-                class="item-logo"
-                draggable="false"
-              />
-            </div>
+    <div class="scroller">
+
+      <section class="snap-section" id="section-0">
+        <div class="main-container">
+          <div class="profile-container">
+            <a href="https://github.com/JarasIau/combinario" target="_blank" class="side-icon left">
+              <img src="static/images/combinario512.png" alt="combinario" draggable="false" />
+            </a>
+            <img class="profile" src="static/images/profile.png" alt=":)" draggable="false" />
+            <a href="https://github.com/JarasIau/sonia-emu" target="_blank" class="side-icon right">
+              <img src="static/images/sonia-emu512.png" alt="sonia-emu" draggable="false" />
+            </a>
           </div>
-
-          <div class="section">
-            <h3><i class="fas fa-briefcase"></i> Experience</h3>
-            <div class="item">
-              <p class="item-title">innowise</p>
-              <p class="item-subtitle">Trainee Python Developer</p>
-              <p class="item-date">2026 - Present</p>
-              <p class="item-description">
-                Currently enrolled in an internship at innowise.<br />
-                FastAPI, Docker, SQLAlchemy, Alembic, pydantic, AWS, pytest
-              </p>
-              <img
-                src="static/images/innowise.png"
-                alt="innowise"
-                class="item-logo"
-                draggable="false"
-              />
-            </div>
-            <div class="item">
-              <p class="item-title">Combinario</p>
-              <p class="item-subtitle">Personal project</p>
-              <p class="item-date">2026 - Present</p>
-              <p class="item-description">
-                FastAPI, Redis, SQLAlchemy, Alembic, Docker, llama.cpp, pydantic
-              </p>
-              <a href="combinario/" class="demo">
-                <img
-                  src="static/images/combinario512.png"
-                  alt="combinario"
-                  class="item-logo"
-                  draggable="false"
-                />
-              </a>
-            </div>
-            <div class="item">
-              <p class="item-title">Sonia-Emu</p>
-              <p class="item-subtitle">Personal project</p>
-              <p class="item-date">2025 - Present</p>
-              <p class="item-description">
-                FastAPI, Rust, Linux input events, pydantic
-              </p>
-              <a href="sonia-emu/" class="demo">
-                <img
-                  src="static/images/sonia-emu512.png"
-                  alt="combinario"
-                  class="item-logo"
-                  draggable="false"
-                />
-              </a>
-            </div>
-          </div>
-
-          <div class="section">
-            <h3><i class="fas fa-code"></i> Skills</h3>
-            <div class="skills-grid">
-              <span class="skill-tag"
-                ><i class="fab fa-python"></i> Python</span
-              >
-              <span class="skill-tag"><i class="fas fa-bolt"></i> FastAPI</span>
-              <span class="skill-tag"><i class="fas fa-flask"></i> Flask</span>
-              <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
-              <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-              <span class="skill-tag"
-                ><i class="fab fa-docker"></i> Docker</span
-              >
-              <span class="skill-tag"
-                ><i class="fas fa-database"></i> SQLAlchemy</span
-              >
-              <span class="skill-tag"
-                ><i class="fas fa-database"></i> Alembic</span
-              >
-              <span class="skill-tag"
-                ><i class="fas fa-check-circle"></i> Pydantic</span
-              >
-              <span class="skill-tag"><i class="fas fa-book"></i> Poetry</span>
-              <span class="skill-tag"
-                ><i class="fas fa-bolt"></i> Redis & rq/arq</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-aws"></i> AWS</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-github"></i> GH Actions</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-brands fa-python"></i> pytest</span
-              >
-            </div>
-          </div>
-          <div class="section">
-            <h3>
-              <i class="fab fa-fw fa-github"></i> This website's source code
-            </h3>
-            <div class="item">
-              <a
-                href="https://github.com/JarasIau/jarasIau.github.io"
-                target="_blank"
-                class="source"
-                >https://github.com/JarasIau/jarasIau.github.io</a
-              >
-            </div>
+          <p class="title">Jaraslau</p>
+          <p class="developer">Python Developer</p>
+        </div>
+        <div class="contacts-container">
+          <p class="title">Contacts</p>
+          <div class="line"></div>
+          <div class="contacts">
+            <p class="contact">Email</p>
+            <a href="mailto:jaraslau@tutanota.com">
+              <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
+              jaraslau@tutanota.com
+            </a>
+            <p class="contact">Github</p>
+            <a href="https://github.com/JarasIau" target="_blank">
+              <i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>
+              https://github.com/JarasIau
+            </a>
           </div>
         </div>
-      </div>
+        <div class="scroll-toast" id="scrollToast">
+          scroll down <i class="fas fa-arrow-down"></i>
+        </div>
+      </section>
+
+      <section class="snap-section" id="section-1">
+        <div class="section-content">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <div class="item">
+            <p class="item-title">Computer Science</p>
+            <p class="item-subtitle">University of Lodz</p>
+            <p class="item-date">2025 - Present</p>
+            <p class="item-description">Faculty of Physics and Applied Informatics</p>
+            <img src="static/images/ul.png" alt="University" class="item-logo" draggable="false" />
+          </div>
+        </div>
+      </section>
+
+      <section class="snap-section" id="section-2">
+        <div class="section-content">
+          <h3><i class="fas fa-briefcase"></i> Experience</h3>
+          <div class="item">
+            <p class="item-title">innowise</p>
+            <p class="item-subtitle">Trainee Python Developer</p>
+            <p class="item-date">2026 - Present</p>
+            <p class="item-description">
+              Currently enrolled in an internship at innowise.<br />
+              FastAPI, Docker, SQLAlchemy, Alembic, pydantic, AWS, pytest
+            </p>
+            <img src="static/images/innowise.png" alt="innowise" class="item-logo" draggable="false" />
+          </div>
+          <div class="item">
+            <p class="item-title">Combinario</p>
+            <p class="item-subtitle">Personal project</p>
+            <p class="item-date">2026 - Present</p>
+            <p class="item-description">FastAPI, Redis, SQLAlchemy, Alembic, Docker, llama.cpp, pydantic</p>
+            <a href="combinario/" class="demo">
+              <img src="static/images/combinario512.png" alt="combinario" class="item-logo" draggable="false" />
+            </a>
+          </div>
+          <div class="item">
+            <p class="item-title">Sonia-Emu</p>
+            <p class="item-subtitle">Personal project</p>
+            <p class="item-date">2025 - Present</p>
+            <p class="item-description">FastAPI, Rust, Linux input events, pydantic</p>
+            <a href="sonia-emu/" class="demo">
+              <img src="static/images/sonia-emu512.png" alt="sonia-emu" class="item-logo" draggable="false" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="snap-section" id="section-3">
+        <div class="section-content">
+          <h3><i class="fas fa-code"></i> Skills</h3>
+          <div class="skills-grid">
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fas fa-bolt"></i> FastAPI</span>
+            <span class="skill-tag"><i class="fas fa-flask"></i> Flask</span>
+            <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+            <span class="skill-tag"><i class="fas fa-database"></i> SQLAlchemy</span>
+            <span class="skill-tag"><i class="fas fa-database"></i> Alembic</span>
+            <span class="skill-tag"><i class="fas fa-check-circle"></i> Pydantic</span>
+            <span class="skill-tag"><i class="fas fa-book"></i> Poetry</span>
+            <span class="skill-tag"><i class="fas fa-bolt"></i> Redis &amp; rq/arq</span>
+            <span class="skill-tag"><i class="fa-brands fa-aws"></i> AWS</span>
+            <span class="skill-tag"><i class="fa-brands fa-github"></i> GH Actions</span>
+            <span class="skill-tag"><i class="fa-brands fa-python"></i> pytest</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="snap-section" id="section-4">
+        <div class="section-content">
+          <h3><i class="fab fa-github"></i> Source Code</h3>
+          <div class="item">
+            <a href="https://github.com/JarasIau/jarasIau.github.io" target="_blank" class="source">
+              https://github.com/JarasIau/jarasIau.github.io
+            </a>
+          </div>
+        </div>
+      </section>
+
     </div>
 
-    <div class="main-container">
-      <div class="profile-container">
-        <a
-          href="https://github.com/JarasIau/combinario"
-          target="_blank"
-          class="side-icon left"
-        >
-          <img
-            src="static/images/combinario512.png"
-            alt="combinario"
-            draggable="false"
-          />
-        </a>
-
-        <img
-          class="profile"
-          src="static/images/profile.png"
-          alt=":)"
-          draggable="false"
-        />
-
-        <a
-          href="https://github.com/JarasIau/sonia-emu"
-          target="_blank"
-          class="side-icon right"
-        >
-          <img
-            src="static/images/sonia-emu512.png"
-            alt="sonia-emu"
-            draggable="false"
-          />
-        </a>
-      </div>
-      <p class="title">Jaraslau</p>
-      <p class="developer">Python Developer</p>
-    </div>
-    <div class="contacts-container">
-      <p class="title">Contacts</p>
-      <div class="line"></div>
-      <div class="contacts">
-        <p class="contact">Email</p>
-        <a href="mailto:jaraslau@tutanota.com">
-          <i
-            class="fas fa-fw fa-envelope icon-pad-right"
-            aria-hidden="true"
-          ></i>
-          jaraslau@tutanota.com
-        </a>
-        <p class="contact">Github</p>
-        <a href="https://github.com/JarasIau" target="_blank">
-          <i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>
-          https://github.com/JarasIau
-        </a>
-      </div>
-    </div>
     <script src="static/modal.js"></script>
   </body>
 </html>

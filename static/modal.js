@@ -1,19 +1,20 @@
-const modal = document.getElementById("modal");
-const menuBtn = document.getElementById("menuBtn");
-const closeBtn = document.getElementById("closeBtn");
+const scroller = document.querySelector('.scroller');
+const bookmarks = document.querySelectorAll('.bookmark');
+const sections = document.querySelectorAll('.snap-section');
+const totalSections = sections.length;
 
-menuBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  modal.style.display = "flex";
+function setActive(index) {
+  bookmarks.forEach((b, i) => b.classList.toggle('active', i === index));
+}
+
+scroller.addEventListener('scroll', () => {
+  const index = Math.round(scroller.scrollTop / window.innerHeight);
+  setActive(index);
 });
 
-closeBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  modal.style.display = "none";
-});
-
-modal.addEventListener("click", function (e) {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
+bookmarks.forEach((bookmark, i) => {
+  bookmark.addEventListener('click', (e) => {
+    e.preventDefault();
+    scroller.scrollTo({ top: i * window.innerHeight, behavior: 'smooth' });
+  });
 });
