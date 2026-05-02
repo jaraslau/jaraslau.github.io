@@ -387,7 +387,29 @@ body {
   .skill-tag { font-size: 13px; padding: 6px 12px; }
   .skill-group-label { font-size: 10px; }
 
-  .bookmarks { display: none; }
+  .bookmarks {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .bookmark {
+    flex: 1;
+    height: 48px;
+    border-left: none;
+    border-bottom: none;
+    border-top: 2px solid transparent;
+  }
+
+  .bookmark.active {
+    border-top-color: #e22000;
+    border-left-color: transparent;
+  }
 
   .scroll-toast { font-size: 11px; bottom: 20px; }
 }
