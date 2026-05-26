@@ -72,19 +72,21 @@
       <section class="snap-section" id="section-1">
         <div class="section-content">
           <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-          <div class="item">
-            <p class="item-title">Computer Science</p>
-            <p class="item-subtitle">University of Lodz</p>
-            <p class="item-date">2025 - Present</p>
-            <p class="item-description">
-              Faculty of Physics and Applied Informatics
-            </p>
-            <img
-              src="static/images/ul.png"
-              alt="University"
-              class="item-logo"
-              draggable="false"
-            />
+          <div class="section-card">
+            <div class="item">
+              <p class="item-title">Computer Science</p>
+              <p class="item-subtitle">University of Lodz</p>
+              <p class="item-date">2025 - Present</p>
+              <p class="item-description">
+                Faculty of Physics and Applied Informatics
+              </p>
+              <img
+                src="static/images/ul.png"
+                alt="University"
+                class="item-logo"
+                draggable="false"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -92,73 +94,87 @@
       <section class="snap-section" id="section-2">
         <div class="section-content">
           <h3><i class="fas fa-briefcase"></i> Experience</h3>
-          <div class="item">
-            <p class="item-title">innowise</p>
-            <p class="item-subtitle">Trainee Python Developer</p>
-            <p class="item-date">2026 - Present</p>
-            <p class="item-description">
-              Currently enrolled in an internship at innowise.<br />
-              Highlights:<br />
-              FastAPI, PostgreSQL, MongoDB, Redis, RabbitMQ, AWS, pytest, Docker
-            </p>
-            <img
-              src="static/images/innowise.png"
-              alt="innowise"
-              class="item-logo"
-              draggable="false"
-            />
-          </div>
-          <div class="item">
-            <p class="item-title">Combinario</p>
-            <p class="item-subtitle">Personal project</p>
-            <p class="item-date">2026 - Present</p>
-            <p class="item-description">
-              Highlights:<br />
-              FastAPI, Redis, SQLAlchemy, llama.cpp, Docker
-            </p>
-            <div class="item-links">
-              <a href="combinario/" class="demo">
+          <div class="cards-track">
+            <div class="section-card">
+              <div class="item">
+                <p class="item-title">innowise</p>
+                <p class="item-subtitle">Trainee Python Developer</p>
+                <p class="item-date">2026 - Present</p>
+                <p class="item-description">
+                  Currently enrolled in an internship at innowise.<br />
+                  Highlights:<br />
+                  FastAPI, PostgreSQL, MongoDB, Redis, RabbitMQ, AWS, pytest,
+                  Docker
+                </p>
                 <img
-                  src="static/images/combinario512.png"
-                  alt="combinario"
+                  src="static/images/innowise.png"
+                  alt="innowise"
                   class="item-logo"
                   draggable="false"
                 />
-              </a>
-              <a
-                href="https://github.com/jaraslau/combinario"
-                target="_blank"
-                class="item-github"
-              >
-                <i class="fab fa-github"></i>
-              </a>
+              </div>
+            </div>
+            <div class="section-card">
+              <div class="item">
+                <p class="item-title">Combinario</p>
+                <p class="item-subtitle">Personal project</p>
+                <p class="item-date">2026 - Present</p>
+                <p class="item-description">
+                  Highlights:<br />
+                  FastAPI, Redis, SQLAlchemy, llama.cpp, Docker
+                </p>
+                <div class="item-links">
+                  <a href="combinario/" class="demo">
+                    <img
+                      src="static/images/combinario512.png"
+                      alt="combinario"
+                      class="item-logo"
+                      draggable="false"
+                    />
+                  </a>
+                  <a
+                    href="https://github.com/jaraslau/combinario"
+                    target="_blank"
+                    class="item-github"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="section-card">
+              <div class="item">
+                <p class="item-title">Sonia-Emu</p>
+                <p class="item-subtitle">Personal project</p>
+                <p class="item-date">2025 - Present</p>
+                <p class="item-description">
+                  Highlights:<br />
+                  FastAPI, Rust, Linux input events, Docker
+                </p>
+                <div class="item-links">
+                  <a href="sonia-emu/" class="demo">
+                    <img
+                      src="static/images/sonia-emu512.png"
+                      alt="sonia-emu"
+                      class="item-logo"
+                      draggable="false"
+                    />
+                  </a>
+                  <a
+                    href="https://github.com/jaraslau/sonia-emu"
+                    target="_blank"
+                    class="item-github"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="item">
-            <p class="item-title">Sonia-Emu</p>
-            <p class="item-subtitle">Personal project</p>
-            <p class="item-date">2025 - Present</p>
-            <p class="item-description">
-              Highlights:<br />
-              FastAPI, Rust, Linux input events, Docker
-            </p>
-            <div class="item-links">
-              <a href="sonia-emu/" class="demo">
-                <img
-                  src="static/images/sonia-emu512.png"
-                  alt="sonia-emu"
-                  class="item-logo"
-                  draggable="false"
-                />
-              </a>
-              <a
-                href="https://github.com/jaraslau/sonia-emu"
-                target="_blank"
-                class="item-github"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+          <div class="scroll-dots">
+            <span class="scroll-dot active"></span>
+            <span class="scroll-dot"></span>
+            <span class="scroll-dot"></span>
           </div>
         </div>
       </section>
@@ -166,95 +182,124 @@
       <section class="snap-section" id="section-3">
         <div class="section-content">
           <h3><i class="fas fa-code"></i> Skills & Tools</h3>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Languages</p>
-            <div class="skills-grid">
-              <span class="skill-tag"
-                ><i class="fab fa-python"></i> Python</span
-              >
+          <div class="cards-track">
+            <div class="section-card">
+              <div class="skill-group">
+                <p class="skill-group-label">Languages</p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fab fa-python"></i> Python</span
+                  >
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group-label">Frameworks & APIs</p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fas fa-bolt"></i> FastAPI</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-flask"></i> Flask</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fab fa-python"></i> Django/DRF</span
+                  >
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group-label">Databases & ORM</p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fa-brands fa-mdb"></i> MongoDB</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-database"></i> PostgreSQL</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fa-solid fa-database"></i> MySQL</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-database"></i> SQLAlchemy</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-database"></i> Alembic</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="section-card">
+              <div class="skill-group">
+                <p class="skill-group-label">
+                  Caching / Queues / Background Jobs
+                </p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fas fa-bolt"></i> Redis</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-clock"></i> rq/arq</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-clock"></i> Celery</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-exchange-alt"></i> RabbitMQ</span
+                  >
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group-label">Dev Tools</p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fab fa-git-alt"></i> Git</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fab fa-docker"></i> Docker</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fab fa-linux"></i> Linux</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-terminal"></i> Shell</span
+                  >
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group-label">Python Tooling / Quality</p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fas fa-book"></i> Poetry</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-vial"></i> pytest</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-search"></i> mypy</span
+                  >
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group-label">Cloud & CI/CD</p>
+                <div class="skills-grid">
+                  <span class="skill-tag"
+                    ><i class="fa-brands fa-aws"></i> AWS</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-archive"></i> S3</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fas fa-envelope"></i> SES</span
+                  >
+                  <span class="skill-tag"
+                    ><i class="fa-brands fa-github"></i> GitHub Actions</span
+                  >
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Frameworks & APIs</p>
-            <div class="skills-grid">
-              <span class="skill-tag"><i class="fas fa-bolt"></i> FastAPI</span>
-              <span class="skill-tag"><i class="fas fa-flask"></i> Flask</span>
-              <span class="skill-tag"
-                ><i class="fab fa-python"></i> Django/DRF</span
-              >
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Databases & ORM</p>
-            <div class="skills-grid">
-              <span class="skill-tag"
-                ><i class="fa-brands fa-mdb"></i> MongoDB</span
-              >
-              <span class="skill-tag"
-                ><i class="fas fa-database"></i> PostgreSQL</span
-              >
-              <span class="skill-tag"
-                ><i class="fa-solid fa-database"></i> MySQL</span
-              >
-              <span class="skill-tag"
-                ><i class="fas fa-database"></i> SQLAlchemy</span
-              >
-              <span class="skill-tag"
-                ><i class="fas fa-database"></i> Alembic</span
-              >
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Caching / Queues / Background Jobs</p>
-            <div class="skills-grid">
-              <span class="skill-tag"><i class="fas fa-bolt"></i> Redis</span>
-              <span class="skill-tag"><i class="fas fa-clock"></i> rq/arq</span>
-              <span class="skill-tag"><i class="fas fa-clock"></i> Celery</span>
-              <span class="skill-tag"
-                ><i class="fas fa-exchange-alt"></i> RabbitMQ</span
-              >
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Dev Tools</p>
-            <div class="skills-grid">
-              <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-              <span class="skill-tag"
-                ><i class="fab fa-docker"></i> Docker</span
-              >
-              <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
-              <span class="skill-tag"
-                ><i class="fas fa-terminal"></i> Shell</span
-              >
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Python Tooling / Quality</p>
-            <div class="skills-grid">
-              <span class="skill-tag"><i class="fas fa-book"></i> Poetry</span>
-              <span class="skill-tag"><i class="fas fa-vial"></i> pytest</span>
-              <span class="skill-tag"><i class="fas fa-search"></i> mypy</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <p class="skill-group-label">Cloud & CI/CD</p>
-            <div class="skills-grid">
-              <span class="skill-tag"
-                ><i class="fa-brands fa-aws"></i> AWS</span
-              >
-              <span class="skill-tag"><i class="fas fa-archive"></i> S3</span>
-              <span class="skill-tag"><i class="fas fa-envelope"></i> SES</span>
-              <span class="skill-tag"
-                ><i class="fa-brands fa-github"></i> GitHub Actions</span
-              >
-            </div>
+          <div class="scroll-dots">
+            <span class="scroll-dot active"></span>
+            <span class="scroll-dot"></span>
           </div>
         </div>
       </section>
@@ -262,14 +307,16 @@
       <section class="snap-section" id="section-4">
         <div class="section-content">
           <h3><i class="fab fa-github"></i> Source Code</h3>
-          <div class="item">
-            <a
-              href="https://github.com/jaraslau/jaraslau.github.io"
-              target="_blank"
-              class="source"
-            >
-              https://github.com/jaraslau/jaraslau.github.io
-            </a>
+          <div class="section-card">
+            <div class="item">
+              <a
+                href="https://github.com/jaraslau/jaraslau.github.io"
+                target="_blank"
+                class="source"
+              >
+                https://github.com/jaraslau/jaraslau.github.io
+              </a>
+            </div>
           </div>
         </div>
       </section>

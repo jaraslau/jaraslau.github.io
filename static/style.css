@@ -281,6 +281,18 @@ body {
   background: #111111;
 }
 
+.cards-track {
+  display: contents;
+}
+
+.section-card {
+  display: contents;
+}
+
+.scroll-dots {
+  display: none;
+}
+
 .item {
   margin-bottom: 25px;
   padding-left: 15px;
@@ -442,6 +454,7 @@ body {
 @media (max-width: 767px) {
   .snap-section {
     justify-content: center;
+    padding-bottom: 48px;
   }
 
   .profile {
@@ -474,12 +487,78 @@ body {
   }
 
   .section-content {
-    width: 88%;
-    padding: 32px 0 32px 12%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 48px - 32px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
   }
+
   .section-content h3 {
     font-size: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+    padding: 16px 6%;
+    position: static;
+    background: #111111;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .section-content h3::before {
+    display: none;
+  }
+
+  .cards-track {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cards-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-card {
+    display: block;
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 16px 6% 24px 6%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .section-card::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    flex-shrink: 0;
+  }
+
+  .scroll-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #333;
+    transition: background 0.2s;
+  }
+
+  .scroll-dot.active {
+    background: #e22000;
   }
 
   .item {
@@ -547,6 +626,6 @@ body {
 
   .scroll-toast {
     font-size: 11px;
-    bottom: 20px;
+    bottom: 68px;
   }
 }

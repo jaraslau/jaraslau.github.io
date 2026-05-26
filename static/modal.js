@@ -1,7 +1,6 @@
 const scroller = document.querySelector(".scroller");
 const bookmarks = document.querySelectorAll(".bookmark");
 const sections = document.querySelectorAll(".snap-section");
-const totalSections = sections.length;
 
 function setActive(index) {
   bookmarks.forEach((b, i) => b.classList.toggle("active", i === index));
@@ -16,5 +15,21 @@ bookmarks.forEach((bookmark, i) => {
   bookmark.addEventListener("click", (e) => {
     e.preventDefault();
     scroller.scrollTo({ top: i * window.innerHeight, behavior: "smooth" });
+  });
+});
+
+document.querySelectorAll(".cards-track").forEach((track) => {
+  const dotsContainer = track
+    .closest(".section-content")
+    .querySelector(".scroll-dots");
+  if (!dotsContainer) return;
+
+  const dots = dotsContainer.querySelectorAll(".scroll-dot");
+
+  track.addEventListener("scroll", () => {
+    const cardWidth = track.offsetWidth;
+    if (cardWidth === 0) return;
+    const index = Math.round(track.scrollLeft / cardWidth);
+    dots.forEach((d, i) => d.classList.toggle("active", i === index));
   });
 });
