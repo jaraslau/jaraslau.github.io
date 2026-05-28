@@ -629,3 +629,25 @@ body {
     bottom: 68px;
   }
 }
+
+.obf-trap {
+  display: none;
+}
+
+.obf-email {
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.obf-email:hover {
+  color: #e22000;
+  cursor: pointer;
+}
+
+.obf-email::after {
+  content: "jaraslau" "@" "tutanota.com";
+}
