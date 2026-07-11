@@ -7,16 +7,39 @@ function setActive(index) {
 }
 
 scroller.addEventListener("scroll", () => {
-  const index = Math.round(scroller.scrollTop / window.innerHeight);
+  let index = 0;
+  let closestDistance = Infinity;
+
+  sections.forEach((section, i) => {
+    const distance = Math.abs(section.offsetTop - scroller.scrollTop);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      index = i;
+    }
+  });
+
   setActive(index);
 });
 
 bookmarks.forEach((bookmark, i) => {
   bookmark.addEventListener("click", (e) => {
     e.preventDefault();
-    scroller.scrollTo({ top: i * window.innerHeight, behavior: "smooth" });
+    const section = sections[i];
+    if (!section) return;
+
+    scroller.scrollTo({ top: section.offsetTop, behavior: "smooth" });
+    history.replaceState(null, "", bookmark.getAttribute("href"));
   });
 });
+
+if (window.location.hash) {
+  const section = document.querySelector(window.location.hash);
+  if (section) {
+    requestAnimationFrame(() => {
+      scroller.scrollTo({ top: section.offsetTop });
+    });
+  }
+}
 
 document.querySelectorAll(".cards-track").forEach((track) => {
   const dotsContainer = track

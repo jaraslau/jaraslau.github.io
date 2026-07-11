@@ -48,44 +48,45 @@ body {
 .bookmarks {
   position: fixed;
   top: 50%;
-  right: 0;
+  right: 18px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   z-index: 1000;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(18, 18, 18, 0.78);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
 }
 
 .bookmark {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   color: #555;
   text-decoration: none;
-  font-size: 16px;
-  border-left: 2px solid #222;
-  border-bottom: 1px solid #1a1a1a;
-  background: #111111;
+  font-size: 15px;
+  border-radius: 50%;
   transition:
     color 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-.bookmark:last-child {
-  border-bottom: none;
-}
-
-.bookmark:hover {
-  color: #e22000;
-  background: #1a1a1a;
+.bookmark:hover,
+.bookmark:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+  outline: none;
 }
 
 .bookmark.active {
-  color: #e22000;
-  border-left-color: #e22000;
-  background: #1a1a1a;
+  color: #ff4b2b;
+  background: rgba(226, 32, 0, 0.14);
 }
 
 .scroll-toast {
@@ -164,6 +165,7 @@ body {
 .side-icon.left {
   left: -60px;
 }
+
 .side-icon.right {
   right: -60px;
 }
@@ -190,54 +192,53 @@ body {
   font-weight: bold;
 }
 
-.contacts-container {
-  max-width: 600px;
-  width: 100%;
-  padding: 15px;
-}
-
-.contacts-container .title {
-  color: white;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  text-align: center;
-}
-
-.line {
-  width: 200px;
-  height: 1px;
-  background: white;
-  margin: 8px auto;
-}
-
-.contacts {
-  color: white;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 18px;
-}
-
-.contact {
-  margin-top: 15px;
+.hero-actions {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero-action {
+  min-height: 42px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.contacts a {
+  gap: 9px;
+  padding: 10px 16px;
   color: #fff;
+  background: #181818;
+  border: 1px solid #2c2c2c;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.contacts a:hover {
-  color: #e22000;
+.hero-action:hover,
+.hero-action:focus-visible {
+  color: #fff;
+  background: #1d1d1d;
+  border-color: #e22000;
+  outline: none;
+  transform: translateY(-2px);
 }
-.contacts a i {
-  margin-right: 8px;
+
+.hero-action-muted {
+  color: #bbb;
+}
+
+.icon-pad-right {
+  margin-right: 0;
 }
 
 .section-content {
@@ -443,9 +444,11 @@ body {
     width: 320px;
     height: 320px;
   }
+
   .main-container .title {
     font-size: 48px;
   }
+
   .developer {
     font-size: 36px;
   }
@@ -469,21 +472,22 @@ body {
   .main-container .title {
     font-size: 28px;
   }
+
   .developer {
     font-size: 18px;
   }
 
-  .contacts-container .title {
-    font-size: 18px;
+  .hero-actions {
+    width: calc(100% - 32px);
+    gap: 8px;
+    margin-top: 14px;
   }
-  .contacts {
-    font-size: 14px;
-  }
-  .contacts a {
+
+  .hero-action {
+    flex: 1 1 30%;
+    min-width: 0;
+    padding: 10px 8px;
     font-size: 13px;
-  }
-  .line {
-    width: 120px;
   }
 
   .section-content {
@@ -564,30 +568,38 @@ body {
   .item {
     margin-bottom: 18px;
   }
+
   .item-title {
     font-size: 16px;
   }
+
   .item-subtitle {
     font-size: 14px;
   }
+
   .item-date {
     font-size: 13px;
   }
+
   .item-description {
     font-size: 13px;
   }
+
   .item-logo {
     width: 36px;
     height: 36px;
   }
+
   .item-links .item-logo {
     width: 36px;
     height: 36px;
   }
+
   .item-github {
     width: 36px;
     height: 36px;
   }
+
   .item-github i {
     font-size: 36px;
   }
@@ -596,37 +608,37 @@ body {
     font-size: 13px;
     padding: 6px 12px;
   }
+
   .skill-group-label {
     font-size: 10px;
   }
 
   .bookmarks {
     top: auto;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
     transform: none;
     flex-direction: row;
     justify-content: center;
-    border-top: 1px solid #1a1a1a;
+    border-radius: 999px;
   }
 
   .bookmark {
     flex: 1;
-    height: 48px;
-    border-left: none;
-    border-bottom: none;
-    border-top: 2px solid transparent;
-  }
-
-  .bookmark.active {
-    border-top-color: #e22000;
-    border-left-color: transparent;
+    height: 42px;
+    width: auto;
   }
 
   .scroll-toast {
     font-size: 11px;
-    bottom: 68px;
+    bottom: 70px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-action {
+    flex-basis: 100%;
   }
 }
 
@@ -634,20 +646,6 @@ body {
   display: none;
 }
 
-.obf-email {
-  justify-content: center;
-  color: #fff;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  cursor: default;
-}
-
-.obf-email:hover {
-  color: #e22000;
-  cursor: pointer;
-}
-
 .obf-email::after {
-  content: "jaraslau" "@" "tutanota.com";
+  content: "";
 }

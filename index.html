@@ -12,24 +12,51 @@
     <link rel="stylesheet" href="static/style.css" />
   </head>
   <body>
-    <nav class="bookmarks">
-      <a class="bookmark active" data-section="0" href="#" title="Home">
+    <nav class="bookmarks" aria-label="Sections">
+      <a
+        class="bookmark active"
+        data-section="0"
+        href="#section-0"
+        title="Home"
+        aria-label="Home"
+      >
         <i class="fas fa-house"></i>
       </a>
-      <a class="bookmark" data-section="1" href="#" title="Education">
+      <a
+        class="bookmark"
+        data-section="1"
+        href="#section-1"
+        title="Education"
+        aria-label="Education"
+      >
         <i class="fas fa-graduation-cap"></i>
       </a>
-      <a class="bookmark" data-section="2" href="#" title="Experience">
+      <a
+        class="bookmark"
+        data-section="2"
+        href="#section-2"
+        title="Experience"
+        aria-label="Experience"
+      >
         <i class="fas fa-briefcase"></i>
       </a>
-      <a class="bookmark" data-section="3" href="#" title="Skills">
+      <a
+        class="bookmark"
+        data-section="3"
+        href="#section-3"
+        title="Skills"
+        aria-label="Skills"
+      >
         <i class="fas fa-code"></i>
       </a>
-      <a class="bookmark" data-section="4" href="#" title="Languages">
+      <a
+        class="bookmark"
+        data-section="4"
+        href="#section-4"
+        title="Languages"
+        aria-label="Languages"
+      >
         <i class="fas fa-language"></i>
-      </a>
-      <a class="bookmark" data-section="5" href="#" title="Source">
-        <i class="fab fa-github"></i>
       </a>
     </nav>
 
@@ -42,28 +69,42 @@
             alt=":)"
             draggable="false"
           />
-          <p class="title">Jaraslau</p>
+          <h1 class="title">Jaraslau</h1>
           <p class="developer">Python Developer</p>
-        </div>
-        <div class="contacts-container">
-          <p class="title">Contacts</p>
-          <div class="line"></div>
-          <div class="contacts">
-            <p class="contact">Email</p>
-            <span class="obf-email">
+          <div class="hero-actions" aria-label="Contact and links">
+            <span
+              class="obf-email hero-action"
+              role="link"
+              tabindex="0"
+              aria-label="Email"
+            >
               <i
                 class="fas fa-fw fa-envelope icon-pad-right"
                 aria-hidden="true"
               ></i>
               <span class="obf-trap">nospam.fake@trash.invalid</span>
+              <span class="action-label">Email</span>
             </span>
-            <p class="contact">Github</p>
-            <a href="https://github.com/jaraslau" target="_blank">
+            <a
+              href="https://github.com/jaraslau"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hero-action"
+            >
               <i
                 class="fab fa-fw fa-github icon-pad-right"
                 aria-hidden="true"
               ></i>
-              https://github.com/jaraslau
+              GitHub
+            </a>
+            <a
+              href="https://github.com/jaraslau/jaraslau.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hero-action hero-action-muted"
+            >
+              <i class="fas fa-code-branch" aria-hidden="true"></i>
+              Source
             </a>
           </div>
         </div>
@@ -138,7 +179,9 @@
                   <a
                     href="https://github.com/jaraslau/combinario"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="item-github"
+                    aria-label="Combinario source code"
                   >
                     <i class="fab fa-github"></i>
                   </a>
@@ -166,7 +209,9 @@
                   <a
                     href="https://github.com/jaraslau/sonia-emu"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="item-github"
+                    aria-label="Sonia-Emu source code"
                   >
                     <i class="fab fa-github"></i>
                   </a>
@@ -371,23 +416,6 @@
                   ><i class="fas fa-comments"></i> Belarusian (native)</span
                 >
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="snap-section" id="section-5">
-        <div class="section-content">
-          <h3><i class="fab fa-github"></i> Source Code</h3>
-          <div class="section-card">
-            <div class="item">
-              <a
-                href="https://github.com/jaraslau/jaraslau.github.io"
-                target="_blank"
-                class="source"
-              >
-                https://github.com/jaraslau/jaraslau.github.io
-              </a>
             </div>
           </div>
         </div>
