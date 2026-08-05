@@ -132,48 +132,163 @@ body {
   margin-bottom: 15px;
 }
 
-.profile {
-  border-radius: 200px;
-  width: 150px;
-  height: 150px;
-  border: 2px solid #000;
-  object-fit: cover;
-  user-select: none;
-}
-
-.profile-container {
+.profile-frame {
+  --pw: 150px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.side-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
+  width: var(--pw);
+  aspect-ratio: 515 / 640;
+  overflow: hidden;
+  background: #e22000;
+  border: 1.5px solid #e22000;
+  transform: scale(0.05);
+  transform-origin: center;
   user-select: none;
+  animation: frame-morph 0.85s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
-.side-icon img {
+.profile-frame .profile {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transition: transform 0.2s ease;
+  object-fit: cover;
+  opacity: 0;
+  clip-path: inset(0 100% 100% 0);
+  filter: blur(1px);
+  animation: profile-reveal 1.9s cubic-bezier(0.45, 0, 0.2, 1) 0.8s forwards;
 }
 
-.side-icon.left {
-  left: -60px;
+.pencil-tip {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  font-size: calc(var(--pw) * 0.14);
+  color: #e22000;
+  text-shadow: 0 0 6px rgba(226, 32, 0, 0.5);
+  transform-origin: 25% 85%;
+  opacity: 0;
+  pointer-events: none;
+  animation: pencil-move 1.5s ease-in-out 0.8s forwards;
 }
 
-.side-icon.right {
-  right: -60px;
+@keyframes frame-morph {
+  0%,
+  50% {
+    transform: scale(0.05);
+    border-radius: 999px;
+    background: #e22000;
+  }
+  78% {
+    transform: scale(0.35);
+    border-radius: 40px;
+    background: #fff;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 10px;
+    background: #fff;
+  }
 }
 
-.side-icon:hover img {
-  filter: brightness(0) saturate(100%) invert(18%) sepia(96%) saturate(7462%)
-    hue-rotate(358deg) brightness(93%) contrast(119%);
-  transform: scale(1.1);
+@keyframes profile-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 100% 0);
+    filter: blur(1px);
+  }
+  6% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pencil-move {
+  0% {
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transform: translate(-10%, -75%) rotate(130deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  12% {
+    top: 4%;
+    left: 15%;
+    transform: translate(-10%, -75%) rotate(155deg);
+  }
+  22% {
+    top: 10%;
+    left: 3%;
+    transform: translate(-10%, -75%) rotate(105deg);
+  }
+  32% {
+    top: 24%;
+    left: 30%;
+    transform: translate(-10%, -75%) rotate(155deg);
+  }
+  42% {
+    top: 29%;
+    left: 17%;
+    transform: translate(-10%, -75%) rotate(108deg);
+  }
+  52% {
+    top: 45%;
+    left: 55%;
+    transform: translate(-10%, -75%) rotate(155deg);
+  }
+  62% {
+    top: 51%;
+    left: 41%;
+    transform: translate(-10%, -75%) rotate(108deg);
+  }
+  72% {
+    top: 68%;
+    left: 78%;
+    transform: translate(-10%, -75%) rotate(155deg);
+  }
+  82% {
+    top: 74%;
+    left: 65%;
+    transform: translate(-10%, -75%) rotate(108deg);
+  }
+  92% {
+    top: 92%;
+    left: 97%;
+    opacity: 1;
+    transform: translate(-10%, -75%) rotate(140deg);
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+    opacity: 0;
+    transform: translate(-10%, -75%) rotate(130deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-frame,
+  .profile-frame .profile,
+  .pencil-tip {
+    animation: none !important;
+  }
+  .profile-frame {
+    transform: scale(1);
+    border-radius: 10px;
+    background: #fff;
+  }
+  .profile-frame .profile {
+    opacity: 1;
+    clip-path: none;
+    filter: none;
+  }
+  .pencil-tip {
+    display: none;
+  }
 }
 
 .main-container .title {
@@ -440,9 +555,8 @@ body {
 }
 
 @media (min-width: 768px) {
-  .profile {
-    width: 320px;
-    height: 320px;
+  .profile-frame {
+    --pw: 320px;
   }
 
   .main-container .title {
@@ -460,13 +574,8 @@ body {
     padding-bottom: 48px;
   }
 
-  .profile {
-    width: 170px;
-    height: 170px;
-  }
-
-  .side-icon {
-    display: none;
+  .profile-frame {
+    --pw: 170px;
   }
 
   .main-container .title {
