@@ -202,33 +202,41 @@ body {
 
 @keyframes fist-left {
   0% {
+    left: calc(50% - 2px);
     opacity: 0;
     transform: translate(-95%, -50%) rotate(8deg);
+  }
+  34% {
+    left: calc(50% - 2px);
   }
   18%,
   82% {
     opacity: 1;
   }
   100% {
-    left: -6%;
+    left: 0;
     opacity: 0;
-    transform: translate(-95%, -50%) rotate(-18deg);
+    transform: translate(-90%, -50%) rotate(-12deg);
   }
 }
 
 @keyframes fist-right {
   0% {
+    right: calc(50% - 2px);
     opacity: 0;
     transform: translate(95%, -50%) scaleX(-1) rotate(8deg);
+  }
+  34% {
+    right: calc(50% - 2px);
   }
   18%,
   82% {
     opacity: 1;
   }
   100% {
-    right: -6%;
+    right: 0;
     opacity: 0;
-    transform: translate(95%, -50%) scaleX(-1) rotate(-18deg);
+    transform: translate(90%, -50%) scaleX(-1) rotate(-12deg);
   }
 }
 
