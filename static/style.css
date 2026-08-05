@@ -162,6 +162,11 @@ body {
   animation: fist-right 2.2s cubic-bezier(0.7, 0, 0.2, 1) 0.8s forwards;
 }
 
+.yes-fist {
+  right: 0;
+  animation: yes-fist 0.8s ease 2.55s forwards;
+}
+
 @keyframes profile-toast {
   0%,
   100% {
@@ -230,13 +235,25 @@ body {
     right: calc(50% - 2px);
   }
   18%,
-  82% {
+  76% {
     opacity: 1;
   }
   100% {
     right: 0;
     opacity: 0;
     transform: translate(90%, -50%) scaleX(-1) rotate(-12deg);
+  }
+}
+
+@keyframes yes-fist {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(90%, -50%) scaleX(-1) rotate(-8deg);
+  }
+  30%,
+  78% {
+    opacity: 1;
   }
 }
 
