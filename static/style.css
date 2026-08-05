@@ -89,40 +89,6 @@ body {
   background: rgba(226, 32, 0, 0.14);
 }
 
-.scroll-toast {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #555;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  animation:
-    toastBob 2s ease-in-out infinite,
-    toastFade 0.4s ease 4s forwards;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-@keyframes toastBob {
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(5px);
-  }
-}
-
-@keyframes toastFade {
-  to {
-    opacity: 0;
-  }
-}
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -130,6 +96,16 @@ body {
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+}
+
+.profile-toast {
+  color: #555;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  opacity: 0;
+  text-align: center;
+  white-space: nowrap;
+  animation: profile-toast 2s ease 2.7s forwards;
 }
 
 .profile-frame {
@@ -169,6 +145,17 @@ body {
   opacity: 0;
   pointer-events: none;
   animation: pencil-move 1.5s ease-in-out 0.8s forwards;
+}
+
+@keyframes profile-toast {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  12%,
+  78% {
+    opacity: 1;
+  }
 }
 
 @keyframes frame-morph {
@@ -273,8 +260,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .profile-frame,
   .profile-frame .profile,
+  .profile-toast,
   .pencil-tip {
     animation: none !important;
+  }
+  .profile-toast {
+    opacity: 1;
   }
   .profile-frame {
     transform: scale(1);
@@ -737,11 +728,6 @@ body {
     flex: 1;
     height: 42px;
     width: auto;
-  }
-
-  .scroll-toast {
-    font-size: 11px;
-    bottom: 70px;
   }
 }
 
