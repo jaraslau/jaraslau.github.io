@@ -482,11 +482,11 @@ img {
   gap: 14px;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-padding-left: 70px;
+  scroll-padding-left: 90px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding: 6px 70px 18px;
-  margin: 0 -70px;
+  padding: 6px 90px 18px;
+  margin: 0 -90px;
 }
 
 .lineup::-webkit-scrollbar {
@@ -519,6 +519,14 @@ img {
     transform 0.12s ease-out;
 }
 
+.lineup-suspect:first-child {
+  transform-origin: top left;
+}
+
+.lineup-suspect:last-child {
+  transform-origin: top right;
+}
+
 .lineup:has(.lineup-suspect:focus-visible) .lineup-suspect,
 .lineup:has(.lineup-suspect a:focus-visible) .lineup-suspect,
 .lineup:has(.lineup-suspect .suspect-frame:hover) .lineup-suspect,
@@ -539,26 +547,6 @@ img {
   filter: none !important;
   outline: none;
   transform: scale(1.03) !important;
-}
-
-.lineup-suspect:first-child:is(
-    :focus-visible,
-    :has(a:focus-visible),
-    :has(.suspect-frame:hover),
-    :has(.mugshot-sign:hover),
-    :has(.case-file:hover)
-  ) {
-  transform: translateX(28px) scale(1.03) !important;
-}
-
-.lineup-suspect:last-child:is(
-    :focus-visible,
-    :has(a:focus-visible),
-    :has(.suspect-frame:hover),
-    :has(.mugshot-sign:hover),
-    :has(.case-file:hover)
-  ) {
-  transform: translateX(-28px) scale(1.03) !important;
 }
 
 .lineup-suspect:focus-visible .mugshot-sign {
