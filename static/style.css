@@ -467,38 +467,60 @@ body {
 }
 
 .projects-content {
-  max-width: 1100px;
+  max-width: 980px;
+  max-height: 90vh;
+  padding-bottom: 18px;
 }
 
 .lineup {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  align-items: start;
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-padding-left: 70px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 6px 70px 18px;
+  margin: 0 -70px;
+}
+
+.lineup::-webkit-scrollbar {
+  display: none;
 }
 
 .lineup-suspect {
   position: relative;
+  flex: 0 0 calc((100% - 28px) / 3);
   min-width: 0;
+  padding-bottom: 4px;
+  scroll-snap-align: start;
   transform-origin: top center;
   transition:
-    filter 0.2s ease,
-    transform 0.2s ease;
+    filter 0.08s linear,
+    transform 0.12s ease-out;
 }
 
-.lineup:hover .lineup-suspect,
-.lineup:has(.lineup-suspect:focus-within) .lineup-suspect {
-  filter: grayscale(1) sepia(0.8) hue-rotate(310deg) brightness(0.55);
-  transform: scale(0.9);
+.lineup:has(.lineup-suspect:is(:hover, :focus-visible, :has(a:focus-visible)))
+  .lineup-suspect {
+  filter: grayscale(1) sepia(0.65) hue-rotate(310deg) brightness(0.62);
+  transform: scale(0.95);
 }
 
 .lineup-suspect:hover,
-.lineup-suspect:focus,
-.lineup-suspect:focus-within {
+.lineup-suspect:focus-visible,
+.lineup-suspect:has(a:focus-visible) {
   z-index: 2;
   filter: none !important;
   outline: none;
-  transform: scale(1.08) !important;
+  transform: scale(1.03) !important;
+}
+
+.lineup-suspect:first-child:is(:hover, :focus-visible, :has(a:focus-visible)) {
+  transform: translateX(28px) scale(1.03) !important;
+}
+
+.lineup-suspect:last-child:is(:hover, :focus-visible, :has(a:focus-visible)) {
+  transform: translateX(-28px) scale(1.03) !important;
 }
 
 .lineup-suspect:focus-visible .mugshot-sign {
@@ -527,14 +549,14 @@ body {
 }
 
 .lineup-suspect:hover .sprite-idle,
-.lineup-suspect:focus .sprite-idle,
-.lineup-suspect:focus-within .sprite-idle {
+.lineup-suspect:focus-visible .sprite-idle,
+.lineup-suspect:has(a:focus-visible) .sprite-idle {
   opacity: 0;
 }
 
 .lineup-suspect:hover .sprite-focus,
-.lineup-suspect:focus .sprite-focus,
-.lineup-suspect:focus-within .sprite-focus {
+.lineup-suspect:focus-visible .sprite-focus,
+.lineup-suspect:has(a:focus-visible) .sprite-focus {
   opacity: 1;
 }
 
@@ -546,54 +568,68 @@ body {
 }
 
 .mugshot-sign {
-  min-height: 72px;
-  margin: -18px 12px 0;
-  padding: 10px;
+  min-height: 58px;
+  margin: -14px 10px 0;
+  padding: 8px;
   position: relative;
   text-align: center;
 }
 
 .mugshot-sign p {
   color: #fff;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .mugshot-sign span,
 .case-type {
   color: #e22000;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .case-file {
-  margin: 14px 0 0;
-  padding: 12px;
+  margin: 10px 0 0;
+  padding: 10px;
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   transition:
-    opacity 0.18s ease,
-    transform 0.18s ease;
+    opacity 0.1s ease,
+    transform 0.1s ease;
 }
 
 .lineup-suspect:hover .case-file,
-.lineup-suspect:focus .case-file,
-.lineup-suspect:focus-within .case-file {
+.lineup-suspect:focus-visible .case-file,
+.lineup-suspect:has(a:focus-visible) .case-file {
   opacity: 1;
   transform: translateY(0);
 }
 
+.case-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.case-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .case-file p {
   color: #aaa;
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 .case-links {
   display: flex;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .case-links a {
@@ -712,7 +748,7 @@ body {
 
   .projects-content {
     overflow-y: auto;
-    padding-bottom: 22px;
+    padding-bottom: 0;
   }
 
   .section-content h3 {
@@ -780,38 +816,66 @@ body {
   }
 
   .lineup {
-    display: flex;
     gap: 0;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .lineup::-webkit-scrollbar {
-    display: none;
+    margin: 0;
+    padding: 8px 0 4px;
+    scroll-padding-left: 0;
+    overflow-y: visible;
   }
 
   .lineup-suspect {
-    min-width: 84%;
-    padding: 14px 6% 22px;
-    scroll-snap-align: center;
+    flex-basis: 100%;
+    padding: 0 8% 8px;
+    scroll-snap-align: start;
   }
 
-  .lineup:hover .lineup-suspect,
-  .lineup:has(.lineup-suspect:focus-within) .lineup-suspect,
+  .suspect-frame {
+    width: 84%;
+    margin: 0 auto;
+  }
+
+  .lineup:has(.lineup-suspect:is(:hover, :focus-visible, :has(a:focus-visible)))
+    .lineup-suspect,
   .lineup-suspect:hover,
-  .lineup-suspect:focus,
-  .lineup-suspect:focus-within {
+  .lineup-suspect:focus-visible,
+  .lineup-suspect:has(a:focus-visible),
+  .lineup-suspect:first-child:is(:hover, :focus-visible, :has(a:focus-visible)),
+  .lineup-suspect:last-child:is(:hover, :focus-visible, :has(a:focus-visible)) {
     transform: none !important;
   }
 
+  .lineup:has(.lineup-suspect:is(:hover, :focus-visible, :has(a:focus-visible)))
+    .lineup-suspect {
+    filter: none;
+  }
+
   .mugshot-sign {
-    min-height: 64px;
+    min-height: 54px;
+    margin-top: -10px;
+  }
+
+  .mugshot-sign p {
+    font-size: 14px;
   }
 
   .case-file {
     opacity: 1;
+    padding: 9px;
     transform: none;
+  }
+
+  .case-file p {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .case-head {
+    margin-bottom: 3px;
+  }
+
+  .case-icon {
+    width: 24px;
+    height: 24px;
   }
 
   .item {
