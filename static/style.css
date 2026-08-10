@@ -19,6 +19,11 @@ body {
   align-items: center;
 }
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .scroller {
   width: 100%;
   height: 100vh;
@@ -637,10 +642,20 @@ body {
   padding: 10px;
   opacity: 0;
   pointer-events: none;
+  position: relative;
   transform: translateY(-4px);
   transition:
     opacity 0.1s ease,
     transform 0.1s ease;
+}
+
+.case-file::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
 }
 
 .lineup-suspect:is(
