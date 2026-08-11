@@ -805,7 +805,7 @@ img {
   }
 
   .projects-content {
-    height: calc(100dvh - 78px);
+    height: auto;
     overflow: hidden;
     padding-bottom: 0;
   }
@@ -876,11 +876,10 @@ img {
 
   .lineup {
     gap: 0;
-    flex: 1;
     margin: 0;
     padding: 4px 0 0;
     scroll-padding-left: 0;
-    overflow-y: visible;
+    overflow-y: hidden;
   }
 
   .lineup-hint {
