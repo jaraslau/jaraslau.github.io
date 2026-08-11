@@ -776,6 +776,84 @@ img {
   color: #e22000;
 }
 
+.languages-content {
+  max-width: 760px;
+}
+
+.language-globe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.globe-wrap {
+  width: min(300px, 72vw);
+  aspect-ratio: 1;
+  cursor: grab;
+  touch-action: none;
+}
+
+.globe-wrap:active {
+  cursor: grabbing;
+}
+
+.globe-wrap svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.country {
+  fill: #1c1c1c;
+  stroke: #3a3a3a;
+  stroke-width: 0.4;
+  transition: fill 0.2s ease;
+}
+
+.country.active {
+  fill: #e22000;
+  stroke: #8a1400;
+}
+
+.sphere-outline {
+  fill: none;
+  stroke: rgba(226, 32, 0, 0.25);
+  stroke-width: 1;
+}
+
+.graticule {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 0.5;
+}
+
+.language-hint {
+  color: #555;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.language-panel {
+  min-height: 54px;
+  text-align: center;
+}
+
+.language-name {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.language-prof {
+  color: #e22000;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
 @media (min-width: 768px) {
   .profile-reveal {
     --pw: 320px;
@@ -1010,6 +1088,23 @@ img {
 
   .skill-group-label {
     font-size: 10px;
+  }
+
+  .languages-content {
+    max-height: calc(100dvh - 78px);
+  }
+
+  .language-globe {
+    gap: 12px;
+    padding: 10px 6% 16px;
+  }
+
+  .globe-wrap {
+    width: min(250px, 62vw);
+  }
+
+  .language-name {
+    font-size: 18px;
   }
 
   .bookmarks {

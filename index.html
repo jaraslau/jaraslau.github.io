@@ -870,48 +870,45 @@
       </section>
 
       <section class="snap-section" id="section-5">
-        <div class="section-content">
+        <div class="section-content languages-content">
           <h3>
             <svg class="icon" aria-hidden="true">
               <use href="#i-language" xlink:href="#i-language"></use>
             </svg>
             Languages
           </h3>
-          <div class="section-card">
-            <div class="skill-group">
-              <p class="skill-group-label">Spoken languages</p>
-              <div class="skills-grid">
-                <span class="skill-tag"
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#i-comments" xlink:href="#i-comments"></use>
-                  </svg>
-                  English (C1)</span
-                >
-                <span class="skill-tag"
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#i-comments" xlink:href="#i-comments"></use>
-                  </svg>
-                  Polish (B2)</span
-                >
-                <span class="skill-tag"
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#i-comments" xlink:href="#i-comments"></use>
-                  </svg>
-                  Russian (native)</span
-                >
-                <span class="skill-tag"
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#i-comments" xlink:href="#i-comments"></use>
-                  </svg>
-                  Belarusian (native)</span
-                >
-              </div>
+          <div class="language-globe" data-language-globe>
+            <div class="globe-wrap" id="languageGlobeWrap">
+              <svg
+                id="languageGlobe"
+                viewBox="0 0 300 300"
+                width="300"
+                height="300"
+                role="img"
+                aria-label="Languages globe"
+              >
+                <defs>
+                  <radialGradient id="sphereShade" cx="35%" cy="30%" r="75%">
+                    <stop offset="0%" stop-color="#2a2a2a" />
+                    <stop offset="60%" stop-color="#161616" />
+                    <stop offset="100%" stop-color="#0a0a0a" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="language-hint">drag to rotate</div>
+            <div class="language-panel" aria-live="polite">
+              <div class="language-name" id="languageName">Loading...</div>
+              <div class="language-prof" id="languageProf"></div>
             </div>
           </div>
         </div>
       </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+    <script src="static/js/globe.js"></script>
     <script src="static/js/modal.js"></script>
     <script src="static/js/nospam.js"></script>
   </body>
