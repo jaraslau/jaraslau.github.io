@@ -322,9 +322,22 @@
               <p class="item-description">
                 Currently enrolled in an internship at innowise.
               </p>
+              <button
+                class="item-stack-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="innowise-stack"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-code" xlink:href="#i-code"></use>
+                </svg>
+                <span>Show stack</span>
+              </button>
               <div
                 class="item-stack"
+                id="innowise-stack"
                 aria-label="Technologies used at innowise"
+                aria-hidden="true"
               >
                 <span
                   ><svg class="icon" aria-hidden="true">

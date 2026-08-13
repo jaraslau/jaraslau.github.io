@@ -78,3 +78,16 @@ function positionProjectCharges() {
 positionProjectCharges();
 lineup?.addEventListener("scroll", positionProjectCharges, { passive: true });
 window.addEventListener("resize", positionProjectCharges);
+
+document.querySelectorAll(".item-stack-toggle").forEach((button) => {
+  const stack = document.getElementById(button.getAttribute("aria-controls"));
+  const label = button.querySelector("span");
+  if (!stack || !label) return;
+
+  button.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    stack.setAttribute("aria-hidden", String(expanded));
+    label.textContent = expanded ? "Show stack" : "Hide stack";
+  });
+});

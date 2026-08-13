@@ -438,11 +438,46 @@ img {
   line-height: 1.5;
 }
 
+.item-stack-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  border: 1px solid rgba(226, 32, 0, 0.75);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+
+.item-stack-toggle:hover,
+.item-stack-toggle:focus-visible {
+  color: #e22000;
+  outline: none;
+}
+
 .item-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  max-height: 140px;
   margin-top: 10px;
+  overflow: hidden;
+  transition:
+    max-height 0.16s ease,
+    opacity 0.12s ease;
+}
+
+.item-stack[aria-hidden="true"] {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .item-stack span {
@@ -454,8 +489,38 @@ img {
   font-size: 11px;
   font-weight: bold;
   line-height: 1;
+  opacity: 1;
   padding: 5px 7px;
+  transform: translateY(0);
+  transition:
+    opacity 0.08s ease,
+    transform 0.08s ease;
   text-transform: uppercase;
+}
+
+.item-stack[aria-hidden="true"] span {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.item-stack span:nth-child(1) {
+  transition-delay: 0.02s;
+}
+
+.item-stack span:nth-child(2) {
+  transition-delay: 0.04s;
+}
+
+.item-stack span:nth-child(3) {
+  transition-delay: 0.06s;
+}
+
+.item-stack span:nth-child(4) {
+  transition-delay: 0.08s;
+}
+
+.item-stack span:nth-child(n + 5) {
+  transition-delay: 0.1s;
 }
 
 .item-stack .icon {
