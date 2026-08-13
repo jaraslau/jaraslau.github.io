@@ -492,6 +492,7 @@ img {
 }
 
 .projects-content {
+  position: relative;
   max-width: 980px;
   max-height: 90vh;
   padding-bottom: 18px;
@@ -592,6 +593,137 @@ img {
 
 .sprite-focus {
   opacity: 0;
+}
+
+.project-charges {
+  position: absolute;
+  top: 98px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.charge-sheet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  color: #e22000;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transform: translate(-50%, -3px);
+  transition:
+    opacity 0.05s ease,
+    transform 0.05s ease;
+}
+
+.charge-lead,
+.charge-skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition:
+    opacity 0.08s ease,
+    transform 0.08s ease;
+}
+
+.charge-skill {
+  color: #fff;
+}
+
+.charge-skill .icon {
+  font-size: 0.9em;
+}
+
+.projects-content:has(.lineup-suspect:nth-child(1) .suspect-frame:hover)
+  .charge-sheet:nth-child(1),
+.projects-content:has(.lineup-suspect:nth-child(1) .mugshot-sign:hover)
+  .charge-sheet:nth-child(1),
+.projects-content:has(.lineup-suspect:nth-child(1) .case-file:hover)
+  .charge-sheet:nth-child(1),
+.projects-content:has(.lineup-suspect:nth-child(2) .suspect-frame:hover)
+  .charge-sheet:nth-child(2),
+.projects-content:has(.lineup-suspect:nth-child(2) .mugshot-sign:hover)
+  .charge-sheet:nth-child(2),
+.projects-content:has(.lineup-suspect:nth-child(2) .case-file:hover)
+  .charge-sheet:nth-child(2),
+.projects-content:has(.lineup-suspect:nth-child(3) .suspect-frame:hover)
+  .charge-sheet:nth-child(3),
+.projects-content:has(.lineup-suspect:nth-child(3) .mugshot-sign:hover)
+  .charge-sheet:nth-child(3),
+.projects-content:has(.lineup-suspect:nth-child(3) .case-file:hover)
+  .charge-sheet:nth-child(3),
+.projects-content:has(.lineup-suspect:nth-child(4) .suspect-frame:hover)
+  .charge-sheet:nth-child(4),
+.projects-content:has(.lineup-suspect:nth-child(4) .mugshot-sign:hover)
+  .charge-sheet:nth-child(4),
+.projects-content:has(.lineup-suspect:nth-child(4) .case-file:hover)
+  .charge-sheet:nth-child(4) {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.projects-content:has(.lineup-suspect .suspect-frame:hover) .charge-lead,
+.projects-content:has(.lineup-suspect .mugshot-sign:hover) .charge-lead,
+.projects-content:has(.lineup-suspect .case-file:hover) .charge-lead,
+.projects-content:has(.lineup-suspect .suspect-frame:hover) .charge-skill,
+.projects-content:has(.lineup-suspect .mugshot-sign:hover) .charge-skill,
+.projects-content:has(.lineup-suspect .case-file:hover) .charge-skill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-content:has(.lineup-suspect .suspect-frame:hover) .charge-lead,
+.projects-content:has(.lineup-suspect .mugshot-sign:hover) .charge-lead,
+.projects-content:has(.lineup-suspect .case-file:hover) .charge-lead {
+  transition-delay: 0s;
+}
+
+.projects-content:has(.lineup-suspect .suspect-frame:hover)
+  .charge-skill:nth-child(2),
+.projects-content:has(.lineup-suspect .mugshot-sign:hover)
+  .charge-skill:nth-child(2),
+.projects-content:has(.lineup-suspect .case-file:hover)
+  .charge-skill:nth-child(2) {
+  transition-delay: 0.09s;
+}
+
+.projects-content:has(.lineup-suspect .suspect-frame:hover)
+  .charge-skill:nth-child(3),
+.projects-content:has(.lineup-suspect .mugshot-sign:hover)
+  .charge-skill:nth-child(3),
+.projects-content:has(.lineup-suspect .case-file:hover)
+  .charge-skill:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.projects-content:has(.lineup-suspect .suspect-frame:hover)
+  .charge-skill:nth-child(4),
+.projects-content:has(.lineup-suspect .mugshot-sign:hover)
+  .charge-skill:nth-child(4),
+.projects-content:has(.lineup-suspect .case-file:hover)
+  .charge-skill:nth-child(4) {
+  transition-delay: 0.23s;
+}
+
+.projects-content:has(.lineup-suspect .suspect-frame:hover)
+  .charge-skill:nth-child(5),
+.projects-content:has(.lineup-suspect .mugshot-sign:hover)
+  .charge-skill:nth-child(5),
+.projects-content:has(.lineup-suspect .case-file:hover)
+  .charge-skill:nth-child(5) {
+  transition-delay: 0.3s;
 }
 
 .lineup-suspect:is(
@@ -990,6 +1122,10 @@ img {
     padding: 0 8% 4px;
     scroll-snap-align: start;
     transform: none !important;
+  }
+
+  .project-charges {
+    display: none;
   }
 
   .suspect-frame {

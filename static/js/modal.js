@@ -56,3 +56,25 @@ document.querySelectorAll(".cards-track").forEach((track) => {
     dots.forEach((d, i) => d.classList.toggle("active", i === index));
   });
 });
+
+const projectsContent = document.querySelector(".projects-content");
+const lineup = document.querySelector(".lineup");
+const suspects = lineup?.querySelectorAll(".lineup-suspect") || [];
+const charges = projectsContent?.querySelectorAll(".charge-sheet") || [];
+
+function positionProjectCharges() {
+  if (!projectsContent || !lineup) return;
+
+  const contentLeft = projectsContent.getBoundingClientRect().left;
+  suspects.forEach((suspect, index) => {
+    const charge = charges[index];
+    if (!charge) return;
+
+    const rect = suspect.getBoundingClientRect();
+    charge.style.left = `${rect.left + rect.width / 2 - contentLeft}px`;
+  });
+}
+
+positionProjectCharges();
+lineup?.addEventListener("scroll", positionProjectCharges, { passive: true });
+window.addEventListener("resize", positionProjectCharges);
