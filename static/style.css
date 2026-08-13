@@ -764,6 +764,25 @@ img {
   text-align: center;
 }
 
+.mugshot-sign::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  right: -10px;
+  height: 10px;
+}
+
+.lineup-suspect:is(
+    :has(.suspect-frame:hover),
+    :has(.mugshot-sign:hover),
+    :has(.case-file:hover)
+  )
+  .mugshot-sign::after {
+  display: block;
+}
+
 .mugshot-sign p {
   color: #fff;
   font-size: 15px;
