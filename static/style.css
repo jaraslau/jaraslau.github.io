@@ -1228,6 +1228,14 @@ img {
     margin: 0 auto;
   }
 
+  .sprite-idle {
+    opacity: 1 !important;
+  }
+
+  .sprite-focus {
+    display: none;
+  }
+
   .mugshot-sign {
     min-height: 48px;
     margin: -8px 10px 0;
