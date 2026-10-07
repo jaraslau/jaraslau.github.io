@@ -614,6 +614,10 @@ img {
   user-select: none;
 }
 
+.lineup.is-dragging .lineup-suspect {
+  pointer-events: none;
+}
+
 .lineup::-webkit-scrollbar {
   display: none;
 }

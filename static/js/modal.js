@@ -84,6 +84,28 @@ if (lineup) {
   let startScrollLeft;
   let dragged = false;
 
+  function snapToNearestSuspect() {
+    const lineupRect = lineup.getBoundingClientRect();
+    const snapLeft =
+      lineupRect.left +
+      (parseFloat(getComputedStyle(lineup).scrollPaddingLeft) || 0);
+    let nearestLeft = lineup.scrollLeft;
+    let nearestDistance = Infinity;
+
+    suspects.forEach((suspect) => {
+      const left =
+        lineup.scrollLeft + suspect.getBoundingClientRect().left - snapLeft;
+      const distance = Math.abs(left - lineup.scrollLeft);
+      if (distance < nearestDistance) {
+        nearestLeft = left;
+        nearestDistance = distance;
+      }
+    });
+
+    lineup.classList.remove("is-dragging");
+    lineup.scrollTo({ left: nearestLeft, behavior: "smooth" });
+  }
+
   lineup.addEventListener("pointerdown", (event) => {
     if (
       event.button ||
@@ -108,7 +130,8 @@ if (lineup) {
   lineup.addEventListener("pointerup", (event) => {
     if (!lineup.hasPointerCapture(event.pointerId)) return;
     lineup.releasePointerCapture(event.pointerId);
-    lineup.classList.remove("is-dragging");
+    if (dragged) snapToNearestSuspect();
+    else lineup.classList.remove("is-dragging");
     setTimeout(() => (dragged = false));
   });
 
