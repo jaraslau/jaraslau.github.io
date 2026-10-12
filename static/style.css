@@ -370,6 +370,14 @@ img {
   display: none;
 }
 
+#section-1 .section-content {
+  overflow-y: hidden;
+}
+
+#section-1 .section-content:has(.item-stack[aria-hidden="false"]) {
+  overflow-y: auto;
+}
+
 .section-content h3 {
   font-size: 24px;
   color: #e22000;
